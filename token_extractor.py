@@ -1,6 +1,7 @@
 import base64
 import hashlib
 import hmac
+import getpass
 import json
 import os
 import random
@@ -228,10 +229,8 @@ def print_entry(key, value, tab):
 
 servers = ["cn", "de", "us", "ru", "tw", "sg", "in", "i2"]
 servers_str = ", ".join(servers)
-print("Username (email or user ID):")
-username = input()
-print("Password:")
-password = input()
+username = input("Username (email or user ID):")
+password = getpass.getpass(prompt="Password:")
 print(f"Server (one of: {servers_str}) Leave empty to check all available:")
 server = input()
 while server not in ["", *servers]:
