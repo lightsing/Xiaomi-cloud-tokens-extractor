@@ -229,10 +229,9 @@ def print_entry(key, value, tab):
 
 servers = ["cn", "de", "us", "ru", "tw", "sg", "in", "i2"]
 servers_str = ", ".join(servers)
-username = input("Username (email or user ID):")
-password = getpass.getpass(prompt="Password:")
-print(f"Server (one of: {servers_str}) Leave empty to check all available:")
-server = input()
+username = input("Username (email or user ID): ")
+password = getpass.getpass(prompt="Password: ")
+server = input(f"Server (one of: {servers_str}) Leave empty to check all available: ")
 while server not in ["", *servers]:
     print(f"Invalid server provided. Valid values: {servers_str}")
     print("Server:")
@@ -281,5 +280,4 @@ else:
     print("Unable to log in.")
 
 print()
-print("Press ENTER to finish")
-input()
+input("Press ENTER to finish")
